@@ -200,7 +200,7 @@ int main(int argc, char* argv[])
 					case ENA: fp = EnaWin; break;
 					case INA: fp = InaWin; break;
 					case DIS: fp = DisWin; break;
-					case HID: fp = HidWin; break;
+					//case HID: fp = HidWin; break;
 					case VIS: fp = VisWin; break;
 					case REN: fp = RenWin; break;
 					case MOV: fp = MovWin; break;

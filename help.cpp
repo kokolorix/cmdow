@@ -101,7 +101,7 @@ printf(
 			(!lstrcmpi("/ENA", cmd)) ||
 			(!lstrcmpi("/DIS", cmd)) ||
 			(!lstrcmpi("/VIS", cmd)) ||
-			(!lstrcmpi("/HID", cmd)) ||
+			//(!lstrcmpi("/HID", cmd)) ||
 			(!lstrcmpi("/MIN", cmd)) ||
 			(!lstrcmpi("/MAX", cmd)) ||
 			(!lstrcmpi("/RES", cmd))) {
@@ -110,7 +110,7 @@ printf(
 		"Some of these commands allow you to manipulate windows in ways not normally\n"
 		"possible. Improper use may cause unexpected results and system instability.\n\n"
 //		 ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
-		"  CMDOW window {[/ACT] [/INA] [/ENA] [/DIS] [/VIS] [/HID] [/MIN] [/MAX] [/RES]}\n\n"
+		"  CMDOW window {[/ACT] [/INA] [/ENA] [/DIS] [/VIS] [/MIN] [/MAX] [/RES]}\n\n"
 //		 ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
 		"  window  Window to act on. Specify a window by its handle (in hex format, eg\n"
 		"          0x1A0142) or caption (window title). Caption is case insensitive.\n"
@@ -131,8 +131,9 @@ printf(
 		"  /DIS    Disables the specified window. A disabled window will continue to run\n"
 		"          as usual, although it will not accept user input until it is enabled.\n"
 		"  /VIS    Unhides the specified window (make it visible).\n"
-		"  /HID    Hides the specified window. Although a hidden window will not be\n"
-		"          shown on the taskbar, it will still run and may be unhidden later.\n");
+		//"  /HID    Hides the specified window. Although a hidden window will not be\n"
+		//"          shown on the taskbar, it will still run and may be unhidden later.\n"
+		);
 		printf(
 		"  /MIN    Minimizes specified window. Not all windows can be minimized, dialog\n"
 		"          boxes for instance.\n"
@@ -231,7 +232,7 @@ printf(
 		"  /RUN    Executes the specified file if possible, otherwise opens it using the\n"
 		"          application associated with the filename extension.\n"
 		"  state   Requests how the application's window is initially displayed. Use\n"
-		"          /MIN for minimized, /MAX for maximized and /HID for hidden. If\n"
+		"          /MIN for minimized, /MAX for maximized for hidden. If\n"
 		"          omitted the application is started in its default show state. Some\n"
 		"          applications ignore this, use CMDOW to alter the window state after\n"
 		"          the application has started.\n");
@@ -243,7 +244,7 @@ printf(
 		"  Eg /P instructs Notepad to send the specified file to the default printer,\n"
 		"  then quit. This example prints readme.txt without displaying any windows:-\n\n"
 
-		"    CMDOW /RUN /HID notepad /P readme.txt\n\n");
+		"    CMDOW /RUN notepad /P readme.txt\n\n");
 //		 ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
 		printf(
 		"  CMDOW can be used to create autorun CDs that work on all Win32 platforms.\n"
@@ -262,7 +263,7 @@ printf(
 //		 ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
 		"  CMDOW [window | /T] [/B] [/F] [/P]\n"
 		"  CMDOW /TH | /TV | /MA | /CW | /UW | /AT | /FS | /WM\n"
-		"  CMDOW window {[/ACT] [/INA] [/ENA] [/DIS] [/VIS] [/HID] [/MIN] [/MAX] [/RES]\n"
+		"  CMDOW window {[/ACT] [/INA] [/ENA] [/DIS] [/VIS] [/MIN] [/MAX] [/RES]\n"
 		"        [/REN caption] [/TOP] [/NOT] [/MOV left top] [/SIZ width height] [/CLS]\n"
 		"        [/END]}\n"
 		"  CMDOW /RUN [state] file [args]\n\n");
@@ -282,7 +283,7 @@ printf(
 		printf(
 		"  /ACT    Activate specified window.    /INA    Inactivate specified window.\n"
 		"  /ENA    Enable specified window.      /DIS    Disable specified window.\n"
-		"  /VIS    Unhide specified window.      /HID    Hide specified window.\n"
+		"  /VIS    Unhide specified window.\n"
 		"  /MIN    Minimize specified window.    /MAX    Maximize specified window.\n"
 		"  /RES    Restore specified window.     /REN    Rename specified window.\n"
 		"  /TOP    Make window always on top.    /NOT    Make window not always on top.\n"
@@ -291,7 +292,7 @@ printf(
 //		 ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
 		printf(
 		"  /RUN    Executes or opens specified file using associated application.\n"
-		"  state   Initial show state of window (/MIN, /MAX or /HID). Default is normal.\n"
+		"  state   Initial show state of window (/MIN, /MAX). Default is normal.\n"
 		"  args    Optional commandline arguments passed to launched application.\n\n");
 		printf(
 		"  Specify a window by its caption (case insensitive) or handle in hex format.\n"

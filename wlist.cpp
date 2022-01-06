@@ -418,10 +418,11 @@ void DisWin(struct WLIST *w, struct ARGS *a)
 //
 // Hide the window
 //
-void HidWin(struct WLIST *w, struct ARGS *a)
-{
-	ShowWindowAsync(w->hwnd, SW_HIDE);
-}
+//void HidWin(struct WLIST *w, struct ARGS *a)
+//{
+//	printf("Hide Window is deactivated, because virus scanners otherwise classify the program as a Trojan");
+//	ShowWindowAsync(w->hwnd, SW_HIDE);
+//}
 
 //
 // Make the window visible

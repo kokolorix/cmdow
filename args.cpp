@@ -69,7 +69,7 @@ void ParseArgs(int argc, char *argv[], struct ARGS *a)
 		else if(!lstrcmpi("/INA", argv[i])) PushTask(a->tasks, INA);
 		else if(!lstrcmpi("/ENA", argv[i])) PushTask(a->tasks, ENA);
 		else if(!lstrcmpi("/DIS", argv[i])) PushTask(a->tasks, DIS);
-		else if(!lstrcmpi("/HID", argv[i])) PushTask(a->tasks, HID);
+		//else if(!lstrcmpi("/HID", argv[i])) PushTask(a->tasks, HID);
 		else if(!lstrcmpi("/VIS", argv[i])) PushTask(a->tasks, VIS);
 		else if(!lstrcmpi("/END", argv[i])) PushTask(a->tasks, END);
 		else if(!lstrcmpi("/CLS", argv[i])) PushTask(a->tasks, CLS);
@@ -125,7 +125,7 @@ void ParseArgs(int argc, char *argv[], struct ARGS *a)
 			if( !( ( (i++) +1 ) < argc)) Quit(INCARG);
 			if(!lstrcmpi("/MIN", argv[i])) a->sw_state = SW_SHOWMINIMIZED;
 			else if(!lstrcmpi("/MAX", argv[i])) a->sw_state = SW_SHOWMAXIMIZED;
-			else if(!lstrcmpi("/HID", argv[i])) a->sw_state = SW_HIDE;
+			//else if(!lstrcmpi("/HID", argv[i])) a->sw_state = SW_HIDE;
 			else --i;
 			//
 			// next arg MUST be file to open/run
@@ -165,7 +165,7 @@ void ParseArgs(int argc, char *argv[], struct ARGS *a)
 	form3 = ( // op on single window
 		IsTask(a->tasks, MIN) + IsTask(a->tasks, MAX) + IsTask(a->tasks, RES) +
 		IsTask(a->tasks, ACT) + IsTask(a->tasks, INA) + IsTask(a->tasks, ENA) +
-		IsTask(a->tasks, DIS) + IsTask(a->tasks, HID) + IsTask(a->tasks, VIS) +
+		IsTask(a->tasks, DIS) /*+ IsTask(a->tasks, HID)*/ + IsTask(a->tasks, VIS) +
 		IsTask(a->tasks, END) + IsTask(a->tasks, CLS) + IsTask(a->tasks, REN) +
 		IsTask(a->tasks, MOV) + IsTask(a->tasks, SIZ) + IsTask(a->tasks, TOP) +
 		IsTask(a->tasks, NOT)

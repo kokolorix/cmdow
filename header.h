@@ -45,7 +45,7 @@ enum TASK {
 	CW, TV, TH, MA, UW, AT, FS, WM,
 	ACT, INA,
 	DIS, ENA,
-	HID, VIS,
+	/*HID,*/ VIS,
 	MAX, MIN, RES,
 	REN, MOV, SIZ,
 	CLS, END, RUN,
@@ -136,7 +136,7 @@ void ActWin(struct WLIST *w, struct ARGS *a);
 void EnaWin(struct WLIST *w, struct ARGS *a);
 void InaWin(struct WLIST *w, struct ARGS *a);
 void DisWin(struct WLIST *w, struct ARGS *a);
-void HidWin(struct WLIST *w, struct ARGS *a);
+//void HidWin(struct WLIST *w, struct ARGS *a);
 void VisWin(struct WLIST *w, struct ARGS *a);
 void RenWin(struct WLIST *w, struct ARGS *a);
 void MovWin(struct WLIST *w, struct ARGS *a);
