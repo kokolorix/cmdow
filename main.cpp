@@ -60,6 +60,14 @@ int main(int argc, char* argv[])
 			hWnd = FindWindow("Shell_TrayWnd", "");
 			if(hWnd) PostMessage(hWnd, WM_COMMAND, WM_MINIMIZE_ALL, 0);
  			break;
+		case MP: // get current mouse position
+			POINT p;
+			if (GetCursorPos(&p))
+			{
+				//cursor position now in p.x and p.y
+				printf("%d %d", p.x, p.y);
+			}
+ 			break;
 		case UW: // undo minimize all
 			//keybd_event(VK_LWIN, 0, 0, 0);
 			//keybd_event(VK_SHIFT, 0, 0, 0);

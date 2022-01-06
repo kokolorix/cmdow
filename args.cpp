@@ -55,6 +55,7 @@ void ParseArgs(int argc, char *argv[], struct ARGS *a)
 		else if(!lstrcmpi("/TV", argv[i])) PushTask(a->tasks, TV);
 		else if(!lstrcmpi("/TH", argv[i])) PushTask(a->tasks, TH);
 		else if(!lstrcmpi("/MA", argv[i])) PushTask(a->tasks, MA);
+		else if(!lstrcmpi("/MP", argv[i])) PushTask(a->tasks, MP);
 		else if(!lstrcmpi("/UM", argv[i])) PushTask(a->tasks, UW); // maintain /um for compatability with old scripts
 		else if(!lstrcmpi("/UW", argv[i])) PushTask(a->tasks, UW);
 		else if(!lstrcmpi("/AT", argv[i])) PushTask(a->tasks, AT);

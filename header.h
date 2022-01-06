@@ -50,7 +50,7 @@ enum TASK {
 	REN, MOV, SIZ,
 	CLS, END, RUN,
 	TOP, NOT,
-	RCW
+	RCW, MP
 };
 
 enum LISTOPTS {
